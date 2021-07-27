@@ -69,6 +69,7 @@ def add_hilight(post: Post, hilights: List[Post]) -> None:
             post.likes >= 6
             and seconds_since_post <= 60 * 60  # >=6 likes within the first hour
         )
+        or post.likes >= 15  # >= 15 likes overall
     ):
         post.is_sent = True
         hilights.append(post)
